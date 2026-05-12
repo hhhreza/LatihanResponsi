@@ -1,15 +1,24 @@
+<?php 
+session_start();
+
+// CEK APAKAH USER SUDAH LOGIN
+if (!isset($_SESSION['status']) || $_SESSION['status'] != "login") {
+    // Jika belum login, paksa kembali ke halaman login
+    header("Location: login.php?pesan=belumlogin");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Pustaka Digital</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,16 +28,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Koleksi Buku</a>
+          <a class="nav-link active" aria-current="page" href="koleksi.php">Koleksi Buku</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Peminjaman</a>
+          <a class="nav-link" href="peminjaman.php">Peminjaman</a>
         </li>
         </ul>
 
     
         <div class="logout-button ms-auto">
-            <a href="logout.html">
+            <a href="logout.php">
              <button type="button" class="btn btn-light logout">Logout</button>
             </a>
         </div>
@@ -37,22 +46,8 @@
   </div>
 </nav>
 
-
-<div class="card container mt-5">
-    <h2>Login</h2>
-    <form action="proses_login.php" method="POST">
-        <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="username" name="username" required>
-        </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" name="password" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Login</button>
-    </form>
-</div>
-
+    <h1>Halo, <?php echo $_SESSION['username']; ?>!</h1>
+    <p>Selamat datang di halaman dashboard Pustaka Digital.</p>
 
 </body>
 </html>

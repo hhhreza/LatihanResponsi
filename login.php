@@ -35,7 +35,7 @@ if (isset($_POST['login'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg-primary">
     
 
 <div class=" container card col-md-4 mt-5 shadow p-3 mb-5 bg-body rounded">
@@ -59,10 +59,9 @@ if (isset($_POST['login'])) {
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
             </div>
 
-            <button type="submit" class="btn btn-primary w-100" name="login">Login</button>
+            <button type="submit" class="btn btn-primary w-100" name="login">Masuk</button>
 
           </form>
-            </form>
         </div>
 
 

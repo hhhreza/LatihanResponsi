@@ -115,8 +115,8 @@ $result = mysqli_query($koneksi, "SELECT * FROM koleksi_buku"); //biar data buku
                 <td><?= $row['stok'] ?></td>
                 <td><?= $status ?></td>
                 <td>
-                    <a href="edit_buku.php?id=<?= $row['id_buku'] ?>" class="btn btn-warning btn-sm">Edit</a>
-                    <a href="koleksi.php?hapus=<?= $row['id_buku'] ?>" class="btn btn-danger btn-sm"
+                    <a href="edit.php?id=<?= $row['id_buku'] ?>" class="btn btn-success btn-sm">Edit</a>
+                    <a href="koleksi.php?hapus=<?= $row['id_buku'] ?>" class="btn btn-warning btn-sm"
                        onclick="return confirm('Yakin hapus buku ini?')">Hapus</a>
                 </td>
               </tr>
@@ -160,6 +160,8 @@ $result = mysqli_query($koneksi, "SELECT * FROM koleksi_buku"); //biar data buku
                             <option value="Sains">Sains</option>
                             <option value="Sejarah">Sejarah</option>
                             <option value="Teknologi">Teknologi</option>
+                            <option value="Fiksi Sejarah">Fiksi Sejarah</option>
+                            <option value="Magis">Magis</option>
                         </select>
                     </div>
                 </div>

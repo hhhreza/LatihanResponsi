@@ -88,14 +88,14 @@ $buku_tersedia = mysqli_query($koneksi, "SELECT * FROM koleksi_buku WHERE stok >
 
     <div class="text-end mb-3">
         <a href="catatpinjam.php">
-            <button class="btn btn-success btn-sm">
+            <button class="btn btn-secondary btn-sm">
                 + Catat Peminjaman
             </button>
         </a>
     </div>
 
-    <table class="table table-bordered table-hover">
-        <thead class="table-dark">
+    <table class="table table-hover">
+        <thead class="table-primary">
             <tr>
                 <th>No</th>
                 <th>Kode Peminjaman</th>
@@ -130,7 +130,7 @@ $buku_tersedia = mysqli_query($koneksi, "SELECT * FROM koleksi_buku WHERE stok >
                    class="btn btn-info btn-sm text-white"
                    onclick="return confirm('Konfirmasi pengembalian buku ini?')">Kembalikan</a>
             <?php } else { ?>
-                <button class="btn btn-info btn-sm text-white" disabled>Selesai</button>
+                <button class="btn btn-success btn-sm text-white" disabled>Selesai</button>
             <?php } ?>
         </td>
     </tr>
